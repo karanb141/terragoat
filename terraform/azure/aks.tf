@@ -7,9 +7,10 @@ resource azurerm_kubernetes_cluster "k8s_cluster" {
     type = "SystemAssigned"
   }
   default_node_pool {
-    name       = "default"
-    vm_size    = "Standard_D2_v2"
-    node_count = 2
+    enable_host_encryption = true
+    name                   = "default"
+    vm_size                = "Standard_D2_v2"
+    node_count             = 2
   }
   addon_profile {
     oms_agent {
@@ -23,13 +24,14 @@ resource azurerm_kubernetes_cluster "k8s_cluster" {
     enabled = false
   }
   tags = {
-    git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
+    git_commit           = "5c6b5d60a8aa63a5d37e60f15185d13a967f0542"
     git_file             = "terraform/azure/aks.tf"
-    git_last_modified_at = "2020-06-17 12:59:55"
-    git_last_modified_by = "nimrodkor@gmail.com"
+    git_last_modified_at = "2021-05-02 10:06:10"
+    git_last_modified_by = "nimrodkor@users.noreply.github.com"
     git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
+    git_org              = "karanb141"
     git_repo             = "terragoat"
     yor_trace            = "6103d111-864e-42e5-899c-1864de281fd1"
+    yor_name             = "k8s_cluster"
   }
 }
